@@ -95,7 +95,7 @@ header h1 {
 }
 
 @keyframes typing {
-  to { width: 78%; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
