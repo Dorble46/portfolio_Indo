@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmad Eka | Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+  <a href="#home" class="nav-link">Home</a>
+  <a href="#about" class="nav-link">About</a>
+  <a href="#projects" class="nav-link">Projects</a>
+  <a href="#skills" class="nav-link">Skills</a>
+  <a href="#experience" class="nav-link">Experience</a>
+  <a href="#contact" class="nav-link">Contact</a>
+</nav>
+
+<header id="home">
+
+  <div class="hero-text">
+    <h1>Ahmad Eka</h1>
+
+    <p class="typing">
+      Future Engineer • IoT Enthusiast • Problem Solver
+    </p>
+
+   <p class="desc">
+    Berfokus pada pengembangan solusi teknologi praktis dan eksplorasi sistem IoT.
+   </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="circle"></div>
+  </div>
+
+</header>
+
+<section id="about" class="fade">
+  <h2>About Me</h2>
+
+  <p>
+  Saya adalah siswa jurusan Teknik Elektronika Industri yang memiliki minat besar dalam pengembangan teknologi, terutama pada sistem otomatisasi dan Internet of Things (IoT).
+  </p>
+
+  <p>
+    Saya senang mempelajari hal baru melalui pembuatan project nyata yang dapat menyelesaikan masalah di kehidupan sehari-hari.
+  </p>
+
+  <p>
+    Saat ini saya terus mengembangkan kemampuan di bidang hardware maupun software untuk menciptakan solusi yang bermanfaat.
+  </p>
+
+  <p>
+  Tujuan saya adalah melanjutkan pendidikan di universitas teknik terbaik dan terus berkembang di dunia teknologi dan inovasi.
+  </p>
+</section>
+
+<section id="projects" class="fade">
+  <h2>Project</h2>
+
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-icon">📡</div>
+
+      <h3>Sistem Absensi berbasis RFID</h3>
+
+      <p>
+        Mengembangkan sistem absensi otomatis berbasis RFID untuk meningkatkan efisiensi dan mengurangi kesalahan absensi manual.
+</p>
+
+      <div class="tech">
+        <span>Arduino</span>
+        <span>RFID</span>
+        <span>C++</span>
+      </div>
+
+      <a href="#" class="project-btn">View Details</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">💻</div>
+
+      <h3>Portfolio Website</h3>
+
+      <p>
+        Merancang dan mengembangkan website portofolio pribadi yang modern dengan UI responsif dan animasi.
+      </p>
+
+      <div class="tech">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <a href="#" class="project-btn">View Details</a>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="skills" class="fade">
+  <h2>Skills</h2>
+
+  <p>Electronics</p>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:80%"></div>
+  </div>
+
+  <p>Programming</p>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:70%"></div>
+  </div>
+
+  <p>Leadership</p>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:90%"></div>
+  </div>
+
+  <p>Problem Solving</p>
+  <div class="skill-bar">
+    <div class="skill-fill" style="width:75%"></div>
+  </div>
+
+</section>
+
+<section id="experience" class="fade">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <h3>Ketua OSIS</h3>
+    <p>
+    Memimpin kegiatan organisasi sekolah dan mengkoordinasikan anggota tim dalam berbagai program kerja.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Ketua Pelaksana Acara</h3>
+    <p>
+    Mengorganisir kegiatan sekolah dan mengelola tanggung jawab secara efektif.
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="fade">
+  <h2>Contact</h2>
+  <p>Email: ahmadeka244@email.com</p>
+  <p>Instagram: @dorble46</p>
+</section>
+
+<footer>
+  <p>Driven to learn, build, and grow continuously in technology.</p>
+</footer>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+const sections = document.querySelectorAll("section, header");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener('scroll', () => {
+  fades.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+
+window.addEventListener('load', () => {
+  // Panggil fungsi scroll saat load selesai
+  window.dispatchEvent(new Event('scroll'));
+});
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+
+});
+
+</script>
+
+</body>
+</html>
